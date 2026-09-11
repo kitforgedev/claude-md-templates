@@ -8,6 +8,7 @@ Production-ready CLAUDE.md starter files for five stacks, plus the story behind 
 - `CLAUDE-md-go.md` - Go
 - `CLAUDE-md-rust.md` - Rust
 - `CLAUDE-md-nextjs.md` - full long-form example for a Next.js 15 App Router project (commands, architecture, hard rules, definition of done)
+- `cursor-rules-nextjs.mdc` - full `.mdc` rules file for a Next.js 15 App Router project (frontmatter, server-component boundaries, server actions, definition of done)
 - `claude-hooks-settings.json` - ready-to-copy `.claude/settings.json` hooks pack: protect .env files, run tests after edits, auto-format, require a plan file, keep a bash audit log
 
 Copy one into your repo root as `CLAUDE.md`, rename "Your Project" to your project, and adjust the commands to match your scripts.
