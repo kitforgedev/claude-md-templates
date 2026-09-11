@@ -1,0 +1,28 @@
+---
+description: Next.js 15 App Router project rules for Cursor
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# Next.js 15 App Router rules
+
+## Ground rules
+
+- Server Components by default. Add "use client" only where interactivity requires it, at the lowest leaf possible.
+- Data fetching lives in Server Components or Route Handlers. No client-side fetch for initial page data.
+- Never import server-only modules (db, env secrets, fs) into client components. If it needs a secret, it runs on the server.
+- Mutations go through Server Actions with input validation (zod) at the boundary. Revalidate affected paths explicitly.
+
+## Code style
+
+- TypeScript strict. No `any` without a comment explaining why.
+- File conventions: page.tsx, layout.tsx, loading.tsx, error.tsx, route.ts. Colocate only what one route uses; shared code goes in /lib or /components.
+- Images via next/image, fonts via next/font. No raw <img> tags.
+- Metadata via the metadata export, never hardcoded <head> tags.
+
+## Definition of done
+
+- [ ] `npm run build` passes with no warnings
+- [ ] `npm test` passes; new behavior has a failing-then-passing test
+- [ ] No new client components without a stated reason in the PR
+- [ ] Loading and error states exist for every new route
