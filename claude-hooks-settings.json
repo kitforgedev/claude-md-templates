@@ -1,0 +1,49 @@
+{
+  "//": "Ready-to-copy .claude/settings.json hooks pack from The Agentic Coding Kit. Five hooks that prevent real mistakes: protect .env, run tests after edits, auto-format, require a plan file, and keep a bash audit log. Details: https://kitforgehq.surge.sh/blog/claude-code-hooks-examples/",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path' | grep -q '\\.env' && echo 'Blocked: never edit .env files' >&2 && exit 2 || exit 0"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "test -f .claude/plan.md || { echo 'Blocked: write .claude/plan.md first' >&2; exit 2; }"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.command' >> .claude/bash-history.log; exit 0"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path' | grep -qE '\\.(ts|js|py)$' && npm test --silent || exit 0"
+          },
+          {
+            "type": "command",
+            "command": "f=$(jq -r '.tool_input.file_path'); npx prettier --write \"$f\" >/dev/null 2>&1; exit 0"
+          }
+        ]
+      }
+    ]
+  }
+}
