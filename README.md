@@ -8,6 +8,7 @@ Production-ready CLAUDE.md starter files for five stacks, plus the story behind 
 - `CLAUDE-md-go.md` - Go
 - `CLAUDE-md-rust.md` - Rust
 - `CLAUDE-md-nextjs.md` - full long-form example for a Next.js 15 App Router project (commands, architecture, hard rules, definition of done)
+- `claude-hooks-settings.json` - ready-to-copy `.claude/settings.json` hooks pack: protect .env files, run tests after edits, auto-format, require a plan file, keep a bash audit log
 
 Copy one into your repo root as `CLAUDE.md`, rename "Your Project" to your project, and adjust the commands to match your scripts.
 
@@ -17,7 +18,7 @@ The free [CLAUDE.md / .cursorrules generator](https://kitforgehq.surge.sh/genera
 
 ## Read the guide
 
-[CLAUDE.md Template: The 6 Sections Every Claude Code Project Needs](https://kitforgehq.surge.sh/blog/claude-md-template/) explains why each section exists and how to keep the file effective.
+[CLAUDE.md Template: The 6 Sections Every Claude Code Project Needs](https://kitforgehq.surge.sh/blog/claude-md-template/) explains why each section exists and how to keep the file effective. [5 Claude Code Hooks Examples That Prevent Real Mistakes](https://kitforgehq.surge.sh/blog/claude-code-hooks-examples/) walks through the hooks pack.
 
 ## Want the full system?
 
