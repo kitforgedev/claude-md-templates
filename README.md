@@ -13,6 +13,10 @@ Production-ready CLAUDE.md starter files for five stacks, plus the story behind 
 
 Copy one into your repo root as `CLAUDE.md`, rename "Your Project" to your project, and adjust the commands to match your scripts.
 
+## Check what your CLAUDE.md costs
+
+The free [CLAUDE.md cost checker](https://kitforgedev.github.io/claude-md-cost/) estimates your file's tokens, share of the context window, and API input cost per session - paste your file, runs in the browser, nothing is uploaded.
+
 ## Generate a tailored version in 30 seconds
 
 The free [CLAUDE.md / .cursorrules generator](https://kitforgehq.surge.sh/generator/) builds one of these for your stack with your own rules, in the browser, no signup.
